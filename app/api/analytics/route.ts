@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 
 export async function GET() {
   try {
-    const [byCountry, byDepartment, totalPayroll] = await Promise.all([
+    const [byCountry, byDepartment, total] = await Promise.all([
       prisma.employee.groupBy({
         by: ['country'],
         _avg: { baseSalary: true },
@@ -22,10 +22,10 @@ export async function GET() {
     return NextResponse.json({
       byCountry,
       byDepartment,
-      totalPayroll: (totalPayroll._sum.baseSalary || 0) + (totalPayroll._sum.bonus || 0),
+      totalPayroll: (total._sum.baseSalary || 0) + (total._sum.bonus || 0),
       totalEmployees: await prisma.employee.count(),
     });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch analytics' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to load analytics' }, { status: 500 });
   }
 }
