@@ -5,6 +5,7 @@ import { EmployeeTable } from "@/app/components/EmployeeTable";
 import { EditSalaryModal } from "@/app/components/EditSalaryModal";
 import { Button } from "@/app/components/ui/Button";
 import { Employee } from "./types/employee";
+import { AnalyticsDashboard } from "./components/AnalyticsDashboard";
 
 interface ApiResponse {
   employees: Employee[];
@@ -171,6 +172,7 @@ export default function SalaryManagementPage() {
             </div>
           </>
         )}
+        <AnalyticsDashboard />
       </div>
 
       {/* Edit Modal */}
