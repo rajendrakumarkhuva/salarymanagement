@@ -92,7 +92,7 @@ Focus on **core salary visibility + basic analysis** to replace Excel. Keeping s
 
 | Layer       | Technology                          | Reason |
 |-------------|-------------------------------------|--------|
-| Frontend    | Next.js 15 (App Router) + TypeScript + Tailwind + shadcn/ui | Fast development, built-in API routes, excellent DX |
+| Frontend    | Next.js 16 (App Router) + TypeScript + Tailwind + shadcn/ui | Fast development, built-in API routes, excellent DX |
 | Backend     | Next.js API routes                  | Single deploy, full-stack TypeScript |
 | Database    | SQLite (Prisma ORM)                 | File-based, perfect for assessment, easy seeding |
 | Seeding     | Prisma seed script                  | Reproducible, type-safe |
